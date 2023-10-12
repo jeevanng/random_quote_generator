@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <ThreeDText />
-      <h1>Blah Blah Blah</h1>
+      <h1>Roam the Wilderness of Wisdom</h1>
       <RandomQuoteGenerator />
     </div>
   );

@@ -49,7 +49,7 @@ export default function RandomQuoteGenerator(){
                 loading ? 'Loading...' : (
                 <figure className="text-center">
                     <blockquote className="blockquote">
-                         <p>{quote}</p>
+                         <p className="content">"{quote}"</p>
                     </blockquote>
                     <figcaption className="blockquote-footer">
                          <cite title="Source Title">{author}</cite>
@@ -59,7 +59,7 @@ export default function RandomQuoteGenerator(){
             )}
             <div>
                 <Button className="fixed-button" variant="dark" onClick={getRandomQuote}>
-                    Generate Random Quote
+                    Retrieve Random Quote
                 </Button>
             </div>
         </Container>
