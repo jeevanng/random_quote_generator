@@ -4,8 +4,8 @@ import './3DText.css';
 function ThreeDText() {
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const rXP = (e.clientX - window.innerWidth / 2) / 4;
-      const rYP = (e.clientY - window.innerHeight / 2) / 4;
+      const rXP = (e.clientX - window.innerWidth / 2);
+      const rYP = (e.clientY - window.innerHeight / 2);
       const h1 = document.getElementById('threedtext');
 
       if (h1) {

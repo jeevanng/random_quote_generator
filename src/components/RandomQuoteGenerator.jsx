@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { ApiContext } from "../context/ApiContext";
 import { Container, Button } from 'react-bootstrap';
 import "../styles.css";
+import LoadingImage from "./LoadingImage";
 
 export default function RandomQuoteGenerator(){
 
@@ -21,6 +22,7 @@ export default function RandomQuoteGenerator(){
     useEffect(() => {
         console.log("Making a fetch request")
         getRandomQuote();
+    
     // eslint-disable-next-line    
     }, []);
 
@@ -31,12 +33,14 @@ export default function RandomQuoteGenerator(){
             let responseData = await response.json();
             setQuote(responseData[0].content);
             setAuthor(responseData[0].author);
+
+            setTimeout(() =>{
+                setLoading(false);
+            }, 1000);
         } catch(error){
             console.error(error);
             setError(error);
-        } finally {
-            setLoading(false);
-        }
+        } 
     }
 
     return (
@@ -46,7 +50,7 @@ export default function RandomQuoteGenerator(){
                     <p>Error: {error.message}</p>
                 </div>
             ) : (
-                loading ? 'Loading...' : (
+                loading ? (<LoadingImage />) : (
                 <figure className="text-center">
                     <blockquote className="blockquote">
                          <p className="content">"{quote}"</p>
@@ -62,6 +66,14 @@ export default function RandomQuoteGenerator(){
                     Retrieve Random Quote
                 </Button>
             </div>
+            <footer className="copyright">
+                <div>
+                    Brought to you by Jeevan Ng
+                </div>
+                <div>
+                    &copy; Copyright 2023 
+                </div>
+            </footer>
         </Container>
     );
 }
