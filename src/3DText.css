@@ -1,0 +1,8 @@
+#threedtext {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: 'Verdana';
+    padding: 2rem;
+    text-align: center;
+    background: #dfdfdf;
+  }

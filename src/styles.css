@@ -2,24 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=Bebas+Neue&display=swap');
 
 
+.quote-container{
+    font-family: "Bebas Neue";
+}
+
 .blockquote{
-    font-size: 6.5vh;
-    font-family: "Bebas Neue";
-    padding-top: 8%;
+    font-size: 3.25rem;
+    margin-top: 6%;
 }
 
-.blockquote-footer {
-    font-size: 3.75vh;
-    font-family: "Bebas Neue";
-    padding-top: 2%;
+.blockquote-footer{
+    font-size: 2rem;
+    margin-top: 2%;
 }
 
-.fixed-button {
-    font-size: 4vh;
-    font-family: "Bebas Neue";
-    margin-top: 10%;
-    bottom: 15%;
-    left: 30%;
-    right: 30%;
-    z-index: 1;
+.fixed-button{
+    font-size: 1.75rem;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }

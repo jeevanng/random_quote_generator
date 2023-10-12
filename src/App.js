@@ -1,11 +1,13 @@
 import './App.css';
 import RandomQuoteGenerator from './components/RandomQuoteGenerator';
+import ThreeDText from './3DText';
 
 function App() {
 
   return (
     <div className="App">
-      <h1>QUOTE GENERATOR</h1>
+      <ThreeDText />
+      <h1>Blah Blah Blah</h1>
       <RandomQuoteGenerator />
     </div>
   );
