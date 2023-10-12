@@ -66,6 +66,14 @@ export default function RandomQuoteGenerator(){
                     Retrieve Random Quote
                 </Button>
             </div>
+            <footer className="copyright">
+                <div>
+                    Brought to you by Jeevan Ng 
+                </div>
+                <div>
+                    &copy; Copyright 2023 
+                </div>
+            </footer>
         </Container>
     );
 }
