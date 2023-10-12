@@ -68,7 +68,7 @@ export default function RandomQuoteGenerator(){
             </div>
             <footer className="copyright">
                 <div>
-                    Brought to you by Jeevan Ng 
+                    Brought to you by Jeevan Ng
                 </div>
                 <div>
                     &copy; Copyright 2023 
