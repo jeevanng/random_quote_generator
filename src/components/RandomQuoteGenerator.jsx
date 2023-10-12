@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { ApiContext } from "../context/ApiContext";
 import { Container, Button } from 'react-bootstrap';
 import "../styles.css";
+import LoadingImage from "./LoadingImage";
 
 export default function RandomQuoteGenerator(){
 
@@ -46,7 +47,7 @@ export default function RandomQuoteGenerator(){
                     <p>Error: {error.message}</p>
                 </div>
             ) : (
-                loading ? 'Loading...' : (
+                loading ? (<LoadingImage />) : (
                 <figure className="text-center">
                     <blockquote className="blockquote">
                          <p className="content">"{quote}"</p>
