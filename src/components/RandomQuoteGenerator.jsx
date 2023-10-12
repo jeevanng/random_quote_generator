@@ -6,6 +6,9 @@ export default function RandomQuoteGenerator(){
     // Loading state
     const [loading, setLoading] = useState(true);
 
+    // Error state
+    const [error, setError] = useState(null);
+
     // Search results
     const [quote, setQuote] = useState([]);
     const [author, setAuthor] = useState([]);
@@ -19,41 +22,37 @@ export default function RandomQuoteGenerator(){
     }, []);
 
     async function getRandomQuote(){
-        setLoading(true);
         try{
+            setLoading(true);
             let response = await fetch(api);
             let responseData = await response.json();
             setQuote(responseData[0].content);
             setAuthor(responseData[0].author);
         } catch(error){
             console.error(error);
+            setError(error);
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     }
 
-    return(
+    return (
         <div>
-            {loading ? 'Loading...' : (
+            {error ? (
                 <div>
-                    {quote && 
+                    <p>Error: {error.message}</p>
+                </div>
+            ) : (
+                loading ? 'Loading...' : (
                     <div>
                         <h1>{quote}</h1>
-                    </div> 
-                    },
-                    {author &&
-                    <div>
                         <h2>---{author}</h2>
                     </div>
-                    }
-                </div>
+                )
             )}
-
-            <div>
-                <button onClick={getRandomQuote}>
-                    Generate Random Quote
-                </button>
-            </div>
-            
+            <button onClick={getRandomQuote}>
+                Generate Random Quote
+            </button>
         </div>
-    )
+    );
 }
