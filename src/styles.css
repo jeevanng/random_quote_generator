@@ -3,20 +3,21 @@
 
 
 .blockquote{
-    font-size: 7vh;
+    font-size: 6.5vh;
     font-family: "Bebas Neue";
-    
+    padding-top: 8%;
 }
 
 .blockquote-footer {
-    font-size: 4vh;
+    font-size: 3.75vh;
     font-family: "Bebas Neue";
+    padding-top: 2%;
 }
 
 .fixed-button {
     font-size: 4vh;
     font-family: "Bebas Neue";
-    position: fixed;
+    margin-top: 10%;
     bottom: 15%;
     left: 30%;
     right: 30%;

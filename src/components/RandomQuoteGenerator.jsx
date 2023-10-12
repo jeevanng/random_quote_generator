@@ -49,8 +49,7 @@ export default function RandomQuoteGenerator(){
                 loading ? 'Loading...' : (
                 <figure className="text-center">
                     <blockquote className="blockquote">
-                        <span id="sentence" className="sentence">{quote}</span>
-                        <span className="input-cursor"></span>
+                        <p>{quote}</p>
                     </blockquote>
                     <figcaption className="blockquote-footer">
                         <cite title="Source Title">{author}</cite>
