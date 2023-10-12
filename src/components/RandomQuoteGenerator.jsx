@@ -22,6 +22,7 @@ export default function RandomQuoteGenerator(){
     useEffect(() => {
         console.log("Making a fetch request")
         getRandomQuote();
+    
     // eslint-disable-next-line    
     }, []);
 
@@ -32,12 +33,14 @@ export default function RandomQuoteGenerator(){
             let responseData = await response.json();
             setQuote(responseData[0].content);
             setAuthor(responseData[0].author);
+
+            setTimeout(() =>{
+                setLoading(false);
+            }, 1000);
         } catch(error){
             console.error(error);
             setError(error);
-        } finally {
-            setLoading(false);
-        }
+        } 
     }
 
     return (
