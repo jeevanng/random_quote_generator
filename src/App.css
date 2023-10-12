@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow&family=Bebas+Neue&family=Pacifico&display=swap');
+
 .App {
   text-align: center;
   background: #dfdfdf;
@@ -5,5 +7,16 @@
 }
 
 h1{
-  font-size: 1rem;
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: "Pacifico";
+}
+
+.fade-in-text{
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
