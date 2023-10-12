@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Random Quote Generator</h1>
+      <h1>Welcome...</h1>
       <RandomQuoteGenerator />
     </div>
   );

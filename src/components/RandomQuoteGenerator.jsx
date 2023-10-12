@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { ApiContext } from "../context/ApiContext";
+import { Container, Button } from 'react-bootstrap';
+import "../styles.css";
 
 export default function RandomQuoteGenerator(){
 
@@ -19,6 +21,7 @@ export default function RandomQuoteGenerator(){
     useEffect(() => {
         console.log("Making a fetch request")
         getRandomQuote();
+    // eslint-disable-next-line    
     }, []);
 
     async function getRandomQuote(){
@@ -37,22 +40,29 @@ export default function RandomQuoteGenerator(){
     }
 
     return (
-        <div>
+        <Container className="quote-container">
             {error ? (
                 <div>
                     <p>Error: {error.message}</p>
                 </div>
             ) : (
                 loading ? 'Loading...' : (
-                    <div>
-                        <h1>{quote}</h1>
-                        <h2>---{author}</h2>
-                    </div>
+                <figure className="text-center">
+                    <blockquote className="blockquote">
+                        <span id="sentence" className="sentence">{quote}</span>
+                        <span className="input-cursor"></span>
+                    </blockquote>
+                    <figcaption className="blockquote-footer">
+                        <cite title="Source Title">{author}</cite>
+                    </figcaption>
+                  </figure>
                 )
             )}
-            <button onClick={getRandomQuote}>
-                Generate Random Quote
-            </button>
-        </div>
+            <div>
+                <Button className="fixed-button" variant="dark" onClick={getRandomQuote}>
+                    Generate Random Quote
+                </Button>
+            </div>
+        </Container>
     );
 }

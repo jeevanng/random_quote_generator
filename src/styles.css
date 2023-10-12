@@ -1,0 +1,24 @@
+/* Import the Bebas Neue font directly into css file */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Bebas+Neue&display=swap');
+
+
+.blockquote{
+    font-size: 7vh;
+    font-family: "Bebas Neue";
+    
+}
+
+.blockquote-footer {
+    font-size: 4vh;
+    font-family: "Bebas Neue";
+}
+
+.fixed-button {
+    font-size: 4vh;
+    font-family: "Bebas Neue";
+    position: fixed;
+    bottom: 15%;
+    left: 30%;
+    right: 30%;
+    z-index: 1;
+}

@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+// Import bootstrap here first so that it does not override style. Order matters
+
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS 
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ApiProvider from './context/ApiContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +23,6 @@ root.render(
     <ApiProvider>
 
       <BrowserRouter>
-        
         <Routes>
           <Route path="/" element={<App />} />
         </Routes>
