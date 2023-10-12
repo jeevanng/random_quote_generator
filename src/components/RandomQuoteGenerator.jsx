@@ -3,6 +3,9 @@ import { ApiContext } from "../context/ApiContext";
 
 export default function RandomQuoteGenerator(){
 
+    // Loading state
+    const [loading, setLoading] = useState(true);
+
     // Search results
     const [quote, setQuote] = useState([]);
     const [author, setAuthor] = useState([]);
@@ -16,27 +19,41 @@ export default function RandomQuoteGenerator(){
     }, []);
 
     async function getRandomQuote(){
-        let response = await fetch(api);
-        let responseData = await response.json();
-        setQuote(responseData[0].content);
-        setAuthor(responseData[0].author);
+        setLoading(true);
+        try{
+            let response = await fetch(api);
+            let responseData = await response.json();
+            setQuote(responseData[0].content);
+            setAuthor(responseData[0].author);
+        } catch(error){
+            console.error(error);
+        }
+        setLoading(false);
     }
 
     return(
         <div>
-            {quote.length > 0 && 
+            {loading ? 'Loading...' : (
+                <div>
+                    {quote && 
+                    <div>
+                        <h1>{quote}</h1>
+                    </div> 
+                    },
+                    {author &&
+                    <div>
+                        <h2>---{author}</h2>
+                    </div>
+                    }
+                </div>
+            )}
+
             <div>
-                <h1>{quote}</h1>
+                <button onClick={getRandomQuote}>
+                    Generate Random Quote
+                </button>
             </div>
-            }
-            {author.length > 0 && 
-            <div>
-                <h2>---{author}</h2>
-            </div>
-            }
-            <button onClick={getRandomQuote}>
-                Generate Random Quote
-            </button>
+            
         </div>
     )
 }
