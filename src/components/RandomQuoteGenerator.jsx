@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { ApiContext } from "../context/ApiContext";
 import { Container, Button } from 'react-bootstrap';
-import "../styles.css";
+import "../styling/styles.css"
 import LoadingImage from "./LoadingImage";
 
 export default function RandomQuoteGenerator(){
@@ -66,14 +66,6 @@ export default function RandomQuoteGenerator(){
                     Retrieve Random Quote
                 </Button>
             </div>
-            <footer className="copyright">
-                <div>
-                    Brought to you by Jeevan Ng
-                </div>
-                <div>
-                    &copy; Copyright 2023 
-                </div>
-            </footer>
         </Container>
     );
 }

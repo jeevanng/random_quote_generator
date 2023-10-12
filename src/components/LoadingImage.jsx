@@ -1,4 +1,4 @@
-import "../loadingimage.css"
+import "../styling/loadingimage.css"
 
 export default function LoadingImage(){
     return(
