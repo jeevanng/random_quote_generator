@@ -12,10 +12,10 @@ export default function RandomQuoteGenerator(){
 
     useEffect(() => {
         console.log("Making a fetch request")
-        apiRequest();
+        getRandomQuote();
     }, []);
 
-    async function apiRequest(){
+    async function getRandomQuote(){
         let response = await fetch(api);
         let responseData = await response.json();
         setQuote(responseData[0].content);
@@ -34,7 +34,9 @@ export default function RandomQuoteGenerator(){
                 <h2>---{author}</h2>
             </div>
             }
-            <button>Click Me</button>
+            <button onClick={getRandomQuote}>
+                Generate Random Quote
+            </button>
         </div>
     )
 }
