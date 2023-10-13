@@ -1,6 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import "../styling/SearchBar.css";
 
+// Array containing all the tags in the API 
+// label and value
+// value was just so I could assign a blank value to "ALL CATEGORIES"
+// This array will be used to populate a drop down box
 const defaultCategories = [
     {
         label: "ALL CATEGORIES",
@@ -259,25 +263,31 @@ const defaultCategories = [
         value: "Work",
     },
 ];
-export default function SearchBar(){
+export default function SearchBar(){    
+    // Hook for navigation
     const navigate = useNavigate();
     
-    const handleSearch = (event) => {
-        event.preventDefault();
-        const query = event.target.query.value; 
-        navigate(`?tag=${query}`);
-    }   
-
+    // This function is called when the value of the dropdown menu changes
     const handleSelectChange = (event) => {
+        // This extracts the selected value from the dropdown menu and stores it in a variable named "query"
         const query = event.target.value;
+        // Using the navigate function to change the URL by adding a 'tag' query parameter with the selected category value
         navigate(`?tag=${query}`);
     }
 
     return (
-        <form className="drop-down-menu" onSubmit={handleSearch}>
+        <form className="drop-down-menu">
+            {/* Creates a dropdown (select) element */}
+            {/* onChange event handler will trigger handleSelectChange function whenever a selected option changes */}
             <select name="query" onChange={handleSelectChange}>
+                {/* Uses map method to iterate over my categories array */}
+                {/* Two properties, option and index */}
+                {/* option will be an object containing two keys "label" and "value" */}
                 {defaultCategories.map((option, index) => (
+                    // Key attribute for React
+                    // value is equal to the "value" of the category array
                     <option key={index} value={option.value}>
+                        {/* option.label is equal to the "label" of the category array */}
                         {option.label}
                     </option>
                     ))}

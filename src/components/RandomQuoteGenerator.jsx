@@ -4,6 +4,7 @@ import { Container, Button } from 'react-bootstrap';
 import "../styling/styles.css"
 import LoadingImage from "./LoadingImage";
 
+// Receives a query prop 
 export default function RandomQuoteGenerator({ query }){
 
     // Loading state
@@ -24,6 +25,9 @@ export default function RandomQuoteGenerator({ query }){
     // Destructure api variable from the context. Accesses {api} value from ApiContext 
     const {api} = useContext(ApiContext);
 
+    // Constructs the Api URL to be fetched
+    // If a query is provided as a prop (It won't be when it's first rendered), append {query} to the api URL
+    // If not, use the default URL provided. Hardcoded which is not ideal.
     const apiUrl = query ? `${api}${query}` : 'https://api.quotable.io/quotes/random?tags=';
 
     // Run once, immediately after the component is rendered
@@ -31,6 +35,7 @@ export default function RandomQuoteGenerator({ query }){
         console.log("Making a fetch request")
         getRandomQuote();
     
+    // Whenever the query prop changes, component renders (updates) 
     // eslint-disable-next-line    
     }, [query]);
 
