@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
+import "../styling/SearchBar.css";
 
 const defaultCategories = [
     {
@@ -274,7 +274,7 @@ export default function SearchBar(){
     }
 
     return (
-        <form onSubmit={handleSearch}>
+        <form className="drop-down-menu" onSubmit={handleSearch}>
             <select name="query" onChange={handleSelectChange}>
                 {defaultCategories.map((option, index) => (
                     <option key={index} value={option.value}>
