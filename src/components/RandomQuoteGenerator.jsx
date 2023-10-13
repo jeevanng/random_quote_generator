@@ -4,7 +4,7 @@ import { Container, Button } from 'react-bootstrap';
 import "../styling/styles.css"
 import LoadingImage from "./LoadingImage";
 
-export default function RandomQuoteGenerator(){
+export default function RandomQuoteGenerator({ query }){
 
     // Loading state
     // Start with a default value of true
@@ -24,13 +24,15 @@ export default function RandomQuoteGenerator(){
     // Destructure api variable from the context. Accesses {api} value from ApiContext 
     const {api} = useContext(ApiContext);
 
+    const apiUrl = query ? `${api}${query}` : 'https://api.quotable.io/quotes/random?tags=';
+
     // Run once, immediately after the component is rendered
     useEffect(() => {
         console.log("Making a fetch request")
         getRandomQuote();
     
     // eslint-disable-next-line    
-    }, []);
+    }, [query]);
 
     // Async function outside useEffect for easier debugging
     async function getRandomQuote(){
@@ -40,7 +42,7 @@ export default function RandomQuoteGenerator(){
             setLoading(true);
             // make network request to the api 
             // wait for response
-            let response = await fetch(api);
+            let response = await fetch(apiUrl);
             // read response data as json, wait for data to be parsed
             let responseData = await response.json();
             // set 'quote' and 'author' state variables with data fetched from the api
