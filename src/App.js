@@ -1,6 +1,6 @@
 import './styling/App.css';
 import RandomQuoteGenerator from './components/RandomQuoteGenerator';
-import ThreeDText from './3DText';
+import ThreeDText from './components/3DText';
 import Footer from './components/Footer';
 import { useLocation } from 'react-router-dom';
 import SearchBar from './components/SearchBar';

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './styling/3DText.css';
+import '../styling/3DText.css';
 
 function ThreeDText() {  
     // componentDidMount equivalent 
