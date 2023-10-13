@@ -6,7 +6,7 @@ export const ApiContext = createContext(null)
 export default function ApiProvider({children}){
     
     // Start with default URL
-    const [apiUrl, setApiUrl] = useState("https://api.quotable.io/quotes/random");
+    const [apiUrl, setApiUrl] = useState("https://api.quotable.io/quotes/random?tags=");
 
     return(
         // Provides the context values to it's descendants/children. Sets value prop to an object with two properties
