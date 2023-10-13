@@ -9,7 +9,9 @@ function App() {
     <div className="App">
       <ThreeDText />
       <div className="fade-in-text">
-        <h1>Roam the Wilderness of Wisdom</h1>
+        <img className="image-slogan inline-content" src={require('./images/owl.gif')} alt="owl" />
+        <h1 className="inline-content">Roam the Wilderness of Wisdom</h1>
+        <img className="image-slogan inline-content" src={require('./images/elephant.gif')} alt="owl" />
       </div>
       <RandomQuoteGenerator />
       <Footer />
