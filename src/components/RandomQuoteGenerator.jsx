@@ -58,7 +58,7 @@ export default function RandomQuoteGenerator({ query }){
             // Brief loading delay to allow user to see loading animation
             setTimeout(() =>{
                 setLoading(false);
-            }, 1000);
+            }, 2000);
             // Catch any errors, set 'error' state to the error object
         } catch(error){
             console.error(error);

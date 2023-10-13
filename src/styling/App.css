@@ -25,7 +25,6 @@ h1{
 
 .fade-in-text{
   animation: fadeIn 5s;
-  text-decoration: underline;
 }
 
 @keyframes fadeIn {
