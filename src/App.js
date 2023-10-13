@@ -8,9 +8,25 @@ import SearchBar from './components/SearchBar';
 function App() {
 
   // useLocation hook to capture the current URL location, which contains query parameters
+
+  // Location {
+  //   hash: ""
+  //   host: "example.com"
+  //   hostname: "example.com"
+  //   href: "https://example.com/some/path?tag=someCategory"
+  //   origin: "https://example.com"
+  //   pathname: "/some/path"
+  //   port: ""
+  //   protocol: "https:"
+  //   search: "?tag=someCategory"
+  // }
+
   const location = useLocation();
+
+  // URLSearchParams { "tag" => "someCategory" }
   // Creates a searchParams object using the URL query string extracted from location object
   const searchParams = new URLSearchParams(location.search);
+
   // Retrieves the value of 'tag' parameter from the query string. 
   // This parameter is set by the URL through the query string
   // E.g. '?tag=History`. query will equal 'History'
